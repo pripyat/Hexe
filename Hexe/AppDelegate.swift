@@ -26,6 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func showPreferences(_ sender: NSMenuItem)
     {
+        // load preferences window
         applicationPreferences.showPreferences()
     }
 }
