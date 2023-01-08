@@ -11,6 +11,7 @@
 		700388AC2965FF4300B7520E /* LineNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700388AB2965FF4300B7520E /* LineNumberRulerView.swift */; };
 		7017DB3F2968465300416257 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7017DB3E2968465300416257 /* Preferences.swift */; };
 		7017DB412968466200416257 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7017DB402968466200416257 /* Preferences.xib */; };
+		704EF5AF2969AD8100F51521 /* Data+HexExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704EF5AE2969AD8100F51521 /* Data+HexExtensions.swift */; };
 		70BFA14E2962EC7C00B28F86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFA14D2962EC7C00B28F86 /* AppDelegate.swift */; };
 		70BFA1502962EC7C00B28F86 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFA14F2962EC7C00B28F86 /* Document.swift */; };
 		70BFA1532962EC7C00B28F86 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70BFA1512962EC7C00B28F86 /* Document.xib */; };
@@ -24,6 +25,7 @@
 		700388AB2965FF4300B7520E /* LineNumberRulerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberRulerView.swift; sourceTree = "<group>"; };
 		7017DB3E2968465300416257 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		7017DB402968466200416257 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		704EF5AE2969AD8100F51521 /* Data+HexExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+HexExtensions.swift"; sourceTree = "<group>"; };
 		70BFA14A2962EC7C00B28F86 /* Hexe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hexe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BFA14D2962EC7C00B28F86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70BFA14F2962EC7C00B28F86 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -52,7 +54,6 @@
 				700388A72965E9E000B7520E /* DALineCounter.swift */,
 				700388AB2965FF4300B7520E /* LineNumberRulerView.swift */,
 				70D6DFCE2965B1C700CF4F31 /* DASimpleStatusbar.swift */,
-				7017DB3E2968465300416257 /* Preferences.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -88,6 +89,8 @@
 			children = (
 				70BFA14D2962EC7C00B28F86 /* AppDelegate.swift */,
 				70BFA14F2962EC7C00B28F86 /* Document.swift */,
+				7017DB3E2968465300416257 /* Preferences.swift */,
+				704EF5AE2969AD8100F51521 /* Data+HexExtensions.swift */,
 				700388A92965E9F000B7520E /* Custom Views */,
 				700388AA2965E9FB00B7520E /* Interface Builder */,
 				70BFA1542962ED2300B28F86 /* Assets.xcassets */,
@@ -175,6 +178,7 @@
 				700388AC2965FF4300B7520E /* LineNumberRulerView.swift in Sources */,
 				70BFA14E2962EC7C00B28F86 /* AppDelegate.swift in Sources */,
 				700388A82965E9E000B7520E /* DALineCounter.swift in Sources */,
+				704EF5AF2969AD8100F51521 /* Data+HexExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,25 +18,37 @@
 			<key>NSDocumentClass</key>
 			<string>$(PRODUCT_MODULE_NAME).Document</string>
 		</dict>
-	</array>
-	<key>UTImportedTypeDeclarations</key>
-	<array>
 		<dict>
-			<key>UTTypeConformsTo</key>
+			<key>CFBundleTypeName</key>
+			<string>Rich Text</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>LSItemContentTypes</key>
 			<array>
-				<string>public.plain-text</string>
+				<string>public.rtf</string>
 			</array>
-			<key>UTTypeDescription</key>
-			<string>Plain Text</string>
-			<key>UTTypeIdentifier</key>
-			<string>com.example.plain-text</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>txt</string>
-				</array>
-			</dict>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSDocumentClass</key>
+			<string>$(PRODUCT_MODULE_NAME).Document</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Rich Text with Attachments</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.apple.rtfd</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>$(PRODUCT_MODULE_NAME).Document</string>
+			<key>LSTypeIsPackage</key>
+			<true/>
 		</dict>
 	</array>
 </dict>

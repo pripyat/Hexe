@@ -13,7 +13,7 @@ class Document: NSDocument {
     @IBOutlet weak var hexeLineCountView: DALineCounter!
     @IBOutlet weak var hexeStatusField: NSTextField!
     
-    var _hexDocumentContents = ""
+    var _hexDocumentContents: NSAttributedString = NSAttributedString(string: "")
 
     override init() {
         super.init()
@@ -45,7 +45,7 @@ class Document: NSDocument {
             self.hexeTextView.lnv_setUpLineNumberView()
         }
         
-        self.hexeTextView.string = _hexDocumentContents
+        self.hexeTextView.textStorage?.setAttributedString(_hexDocumentContents)
         self._refreshCharacterCount()
         
         // attach our observer to monitor character count within our document
@@ -70,20 +70,32 @@ class Document: NSDocument {
         // Alternatively, you could remove this method and override fileWrapper(ofType:), write(to:ofType:), or write(to:ofType:for:originalContentsURL:) instead.
     }
     
-    override func read(from data: Data, ofType typeName: String) throws {
-        // Insert code here to read your document from the given data of the specified type, throwing an error in case of failure.
-        // Alternatively, you could remove this method and override read(from:ofType:) instead.
-        // If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
-        if let _theData = String(data: data, encoding: String.Encoding.utf8)
+    override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws
+    {
+        var _theData: NSAttributedString = NSAttributedString(string: "")
+
+        switch (typeName)
         {
-            _hexDocumentContents = _theData
+            case "public.rtf":
+            if let _fileContents = fileWrapper.regularFileContents
+            {
+                _theData = NSAttributedString(rtf: _fileContents, documentAttributes: nil)!
+            }
+            case "com.apple.rtfd":
+                _theData = NSAttributedString(rtfdFileWrapper: fileWrapper, documentAttributes: nil)!
+            case "public.plain-text":
+            if let _fileContents = fileWrapper.regularFileContents
+            {
+                let _plainText = String(data: _fileContents, encoding: String.Encoding.utf8)!
+                _theData = NSAttributedString(string: _plainText)
+            }
+            default:
+                throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         }
-        else
-        {
-            throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        }
-    }
         
+        _hexDocumentContents = _theData
+    }
+    
     // this function updates the character count
     @objc private func _refreshCharacterCount(_ obj: Notification? = nil)
     {
